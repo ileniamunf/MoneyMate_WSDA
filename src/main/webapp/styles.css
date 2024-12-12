@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("http://fonts.googleapis.com/css?family=Comfortaa:400,300,700");
+
+
+* {
+    --red-main: #C01D2E;
+    --gold-main: #DCB58E;
+    font-family: 'Comfortaa', sans-serif !important;
+}
+
+html, body{
+    width:100%;
+    height: 100%;
+}
+
+#logo {
+    color: var(--red-main);
+
+}
+
+#logo>span {
+    color: var(--gold-main);
+}
+
+.wrapper {
+    right: 20px;
+    position: fixed;
+    bottom: -650px;
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    border: 1px solid black;
+    transition: bottom 0.8s ease;
+    z-index:100;
+}
+
+
+.wrapper.show{
+    bottom: 70px;
+
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+header i {
+    color: var(--red-main);
+    font-size: 32px;
+}
+
+header h2 {
+    color: var(--red-main);
+    font-weight: 500;
+}
+
+
+.wrapper .data p{
+    color: #333;
+    font-size: 16px;
+
+}
+
+.wrapper .buttons {
+    position: relative;
+    left: 400px;
+    margin-top: 16px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.buttons .button {
+    border: none;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 4px;
+    background: var(--gold-main);
+    cursor: pointer;
+    width: calc(100% / 2 - 10px);
+    transition: all 0.2s ease;
+}
+
+.buttons .button:hover {
+    color: black;
+}
+
+#homeCarouselAutoplaying{
+    transform: translateY(-20px);
+
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.3);
+    right: unset;
+    left: unset;
+    width: 100%;
+    height: 100px;
+
+}
+
+.carousel-control-next, .carousel-control-prev {
+    transform: translateY(100px);
+    z-index:50;
+}
+
+
+footer {
+    bottom: 0;
+    background-color: white;
+    z-index: 51;
+
+}
+
+hr {
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75),rgba(0,0,0,0));
+}
+
+#semicircle {
+    position: relative;
+    overflow: hidden;
+}
+
+
+#semicircle::after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: rgba(0,0,0,0);
+    border: 40px solid rgba(0, 0, 0, 0.5);
+
+}
+
+
+.isValid{
+    border: 3px solid #90EE90;
+
+}
+
+.isInvalid{
+   border: 3px solid #EE9090;
+}
+
+#wallet {
+    height: 90%;
+    position: relative;
+    top: 10%;
+    border-top: 1px solid black;
+    transition: top .6s ease;
+}
+
+#wallet.nascondi {
+    top: 60%;
+    transition: top .6s ease;
+}
+
+#result {
+    position: absolute;
+    top: 135%;
+    width: 100%;
+
+}
+
+#result.mostra {
+    top: 29%;
+    transition: top .6s ease;
+}
+
+#resultTable {
+    width: 50%;
+    font-size: 24px;
+    margin-inline: auto;
+
+}
+
+
+#dismiss {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1s ease;
+}
+
+#dismiss.visible {
+    transition: visibility 0s, opacity 1s ease;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.modal-confirm {
+    color: #636363;
+    width: 325px;
+    font-size: 14px;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.modal-confirm .icon-box {
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #82ce34;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+    font-size: 58px;
+    position: relative;
+    top: -11px;
+    right: 4px;
+}
+.modal-confirm.modal-dialog {
+    margin-top: 80px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #82ce34;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+    background: #6fb32b;
+    outline: none;
+}
+
+.modal-content {
+    width: 350px;
+}
+
+.modal-confirm {
+    top: 50px;
+}
+
+
+.card{
+    color: var(--red-main);
+}
+
+.card:hover {
+    background-color: var(--red-main);
+    transition: background-color 0.2s ease;
+    color: var(--gold-main);
+
+
+}
+
+
+#aggiungiCarta input, #importo, #AddebitaRicaricaForm textarea {
+    width: 700px;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+}
+
+#AddebitaRicaricaForm textarea {
+    width: 739px;
+    height: 120%;
+}
+
+#cercaCartaForm2 input {
+    height: 62px;
+    font-size: 32px;
+
+}
+
+#inputContainer {
+    width: 700px;
+}
+
+#basic-addon2{
+    height: 62px;
+}
+
+
+#aggiungiCarta {
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
+
+#btnAggiungiCarta {
+    position: relative;
+    width: 30%;
+    left: 235px;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: var(--red-main);
+}
+
+.modal {
+    margin-inline: auto !important;
+    padding: 0 !important;
+    --bs-modal-margin: 0 !important;
+}
+
+.modal-backdrop{
+    --bs-backdrop-zindex: 1 !important;
+}
+
+.modal-dialog {
+    position: relative;
+    top: 192px;
+}
+
+
+#backArrow {
+    color: white;
+    position: relative;
+    top: 40px;
+    left: -100px;
+}
+
+
+#butnBack {
+    position: relative;
+    left: 80px;
+    top: 40px;
+    height: 100px;
+    width: 150px;
+    z-index: 10;
+}
+
+
+#btnCerca {
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 15px;
+    color: white;
+    background-color: var(--red-main);
+    width: 20%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+#cercaCartaForm2{
+    background-color: snow;
+    border-radius: 20px;
+    height: 200px;
+    width: 900px;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    display: grid;
+    justify-content: center;
+}
+
+#AddebitaRicaricaForm {
+    display: grid;
+    justify-content: center;
+    height: 55vh;
+}
+
+#hidNumCard {
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+
+}
+
+#button {
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: var(--red-main);
+    width: 29%;
+    position: relative;
+    left: 235px;
+    top: 20px;
+}
+
+
+
+#labelNumCard{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+
+#btnContainer{
+    position: relative;
+    bottom: 100px;
+}
+
+
+#buttonsContainer, #resultBS {
+    width: 900px;
+    background-color: snow;
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    top:150px;
+}
+
+
+.compari, .sparisci{
+    position: absolute;
+    transition: left 0.3s ease;
+}
+
+.compari {
+    left: 20%;
+}
+
+#cercaCartaForm2.sparisci{
+    left: -100%;
+}
+
+
+#buttonsContainer.sparisci, #resultBS.sparisci{
+    left:200%;
+}
+
+
+.col>#button, .col>#indietro, .col>#bloccaSblocca {
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    width: 300px;
+    position: relative;
+    top: 20px;
+    left: unset;
+}
+
+.col>#button, .col>#bloccaSblocca {
+    background-color: var(--red-main);
+}
+
+.col>#indietro {
+    background-color: #73111b;
+}
+
+form textarea {
+    resize: none;
+}
+
+
+#btnAggiungiTitolare, #btnAggiungiNegoziante{
+    position: relative;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: var(--red-main);
+    left: 75px;
+}
+
+
+#transactionTable {
+    width: 900px;
+    background-color: snow;
+    border-radius: 20px;
+    height: 60vh;
+    position: relative;
+    top: -60px;
+}
+
+#headers > th {
+    background-color: var(--red-main);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
